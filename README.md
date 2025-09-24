@@ -1,2 +1,2 @@
 # portfolio
-my first project pls dont judge
+my first project(judging is not allowed)
