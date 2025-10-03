@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TO-DO-LIST</title>
+    <title>To-Do-List</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -12,34 +12,33 @@
       <div class="input-container">
         <input
           type="text"
-          id="tasksinput"
-          placeholder="Enter your task"
-          maxlength="100"
+          id="taskInput"
+          placeholder="Add a new task"
+          maxlength="50"
         />
-        <button id="add8tn">Add Task</button>
+        <button id="addBtn">Add Task</button>
       </div>
       <div class="stats">
         <div class="stat">
-          <span class="stat-number" id="total-tasks">0</span>
-          <span> total </span>
+          <span class="stat-number" id="totalTasks">0</span>
+          <span>Total</span>
         </div>
         <div class="stat">
-          <span class="stat-number" id="completed-tasks">0</span>
-          <span> completed </span>
+          <span class="stat-number" id="completedTasks">0</span>
+          <span>Completed</span>
         </div>
         <div class="stat">
-            <span class="stat-number" id="pending-tasks">0</span>
-            <span> pending </span>
+          <span class="stat-number" id="pendingTasks">0</span>
+          <span>Pending</span>
         </div>
       </div>
-      <ul id="todolist">
+      <ul id="todoList">
         <div class="empty-state">
-            <div class="empty-icon">📋</div>
+          <div class="empty-icon">📝</div>
         </div>
-        <p>
-            No tasks added yet. Start by adding a new task above!
-        </p>
+        <p>No tasks yet! Add one above to get started.</p>
       </ul>
     </div>
   </body>
+  <script src="script.js"></script>
 </html>

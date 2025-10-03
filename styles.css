@@ -1,12 +1,11 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
     box-sizing: border-box;
-   
 }
 body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display:flex;
     align-items: center;
@@ -15,10 +14,10 @@ body{
 }
 .container{
     background: white;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius:20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 40px;
-    width: 100%;
+    width:100%;
     max-width: 500px;
     animation: slideUp 0.6s ease-out;
 }
@@ -34,53 +33,52 @@ body{
 
 h1{
     text-align: center;
-    color:blueviolet;
+    color: #333;
     margin-bottom: 30px;
     font-size: 2.5em;
     font-weight: 300;
 }
 
 .input-container{
-    display: flex;
-    gap: 10px;
-    margin-bottom: 30px;
+    display:flex;
+    gap: 10px; 
+    margin-bottom:30px;
 }
 
-#tasksinput{
-    flex:1;
+#taskInput{
+    flex:1;   /* i will explain this at the end */
     padding: 15px 20px;
     border: 2px solid #e1e8ed;
     border-radius: 50px;
     font-size: 16px;
-    outline: none;
-    transition: all 0.3s ease; 
+    outline:none;
+    transition: all 0.3s ease;
 }
 
-#tasksinput:focus{
+#taskInput:focus{
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-    
 }
 
-#add8tn{
+#addBtn{
     padding: 15px 25px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
-    color:white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
     border:none;
     border-radius: 50px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(102,126,234,0.3);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
-#add8tn:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(102,126,234,0.4);
+#addBtn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
-   
-#add8tn:active{
+
+#addBtn:active{
     transform: translateY(0);
 }
 
@@ -93,8 +91,8 @@ h1{
     border-radius: 15px;
     font-size: 14px;
     color: #666;
-
 }
+
 .stat{
     text-align: center;
 }
@@ -106,26 +104,25 @@ h1{
     color: #333;
     margin-bottom: 5px;
 }
-
-#todolist{
+#todoList{
     list-style: none;
     max-height: 400px;
-    overflow-y: auto;
+    overflow-y:auto; /* i will explain this at the end */
 }
 
-.task-item{ /*this class is from js*/
+.task-item{
     background: #f8f9fa;
     margin-bottom: 10px;
     padding: 15px 20px;
     border-radius: 15px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap:15px;
     transition: all 0.3s ease;
-    animation: taskslideIn 0.5s ease-out;
-}    
+    animation: taskSlideIn 0.5s ease-out;
+}
 
-@keyframes taskslideIn{
+@keyframes taskSlideIn{
     from{
         transform: translateX(-20px);
         opacity: 0;
@@ -138,62 +135,65 @@ h1{
 
 .task-item:hover{
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 .task-item.completed{
     background: #e8f5e8;
     opacity: 0.7;
-
 }
+
 .task-checkbox{
     width: 20px;
     height: 20px;
-    border:2px solic #ddd;
+    border: 2px solid #ddd;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
 }
+
 .task-checkbox:hover{
     border-color: #667eea;
 }
-.task-checkbox.checked{
+
+.task-checkbox:checked{
     background: linear-gradient(135deg, #667eea, #764ba2);
     border-color: #667eea;
 }
-.task-checkbox.checked::after{
-    content: '✓'; 
-    color: white;
+
+.task-checkbox:checked::after{
+    content: "✓";
+    position: absolute;
+    color:white;
     font-size: 12px;
     font-weight: bold;
-    position: absolute;
-    top: 50%;
     left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
 }
 
 .task-text{
-    flex:1;
+    flex: 1;
     font-size: 16px;
     color: #333;
     transition: all 0.3s ease;
 }
 
-.task-item.completed .task-text{
+.task-item.completed.task-text{
     text-decoration: line-through;
     color: #999;
 }
 
 .delete-btn{
     background: #ff6b6b;
-    border: none;
     color: white;
+    border: none;
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    font-size: 16px;
     cursor: pointer;
+    font-size: 16px;
     font-weight: bold;
     transition: all 0.3s ease;
     opacity: 0.7;
@@ -215,30 +215,4 @@ h1{
     font-size: 60px;
     margin-bottom: 20px;
     opacity: 0.3;
-}
-
-/*responsive Design*/
-@media (max-width: 480px){
-    .container{
-        padding: 30px;
-        margin: 10px;
-    }
-    h1{
-        font-size: 2em;
-    }
-    .input-container{
-        flex-direction: column;
-    }
-
-    #add8tn{
-        padding: 15px;
-    }
-    .stats{
-        flex-direction: column;
-        gap: 10px;
-
-    }
-
-
-
 }
