@@ -1,2 +1,2 @@
 # To-do-list
-my first project(judging is not allowed)
+my first project
